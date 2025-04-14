@@ -5,7 +5,7 @@
         "telegram",
         "files"
     ],
-  "repository": "https://github.com/TheDextiN/Terabox-Downloader-Bot",
+  "repository": "https://github.com/kiseHoo/tfd",
   "success_url": "/",
   "logo": "https://graph.org/file/c077d950f10061074216e.png",
   "env": {
