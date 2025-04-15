@@ -196,13 +196,15 @@ async def start(m: UpdateNewMessage):
         return await m.reply(f"Please join @rishu_mood then send me the link again.")
     await m.reply(
         reply_text,
-        buttons=[
-            [
-                Button.url("Update Channel", "https://t.me/ur_rishu_143"),
-                Button.url(
-                    "Follow", "https://github.com/rishubot"
-                ),
-            ]
+        buttons = [
+    [
+        Button.url("˹ υᴘᴅᴧᴛє ˼", "https://t.me/Ur_rishu_143"),
+        Button.url("˹ sυᴘᴘσꝛᴛ ˼", "https://t.me/ur_support07")
+    ],
+    [
+        Button.url("˹ ᴧʟʟ ᴧᴘɪ ˼", "https://t.me/RishuApi"),
+        Button.url("˹ ᴧʟʟ ʙᴏᴛ ˼", "https://t.me/Vip_robotz/4")
+    ]
         ],
         link_preview=False,
         parse_mode="markdown",
@@ -259,13 +261,15 @@ Available commands:
     await m.reply(
         help_text,
         parse_mode="markdown",
-        buttons=[
-            [
-                Button.url("Updates", "https://t.me/rishucoder"),
-                Button.url(
-                    "Follow", "https://github.com/rishubot/"
-                ),
-            ]
+        buttons = [
+    [
+        Button.url("˹ υᴘᴅᴧᴛє ˼", "https://t.me/Ur_rishu_143"),
+        Button.url("˹ sυᴘᴘσꝛᴛ ˼", "https://t.me/ur_support07")
+    ],
+    [
+        Button.url("˹ ᴧʟʟ ᴧᴘɪ ˼", "https://t.me/RishuApi"),
+        Button.url("˹ ᴧʟʟ ʙᴏᴛ ˼", "https://t.me/Vip_robotz/4")
+    ]
         ],
     )
 
@@ -364,7 +368,7 @@ async def handle_message(m: Message):
         return await hm.edit(
             f"Sorry! File is not supported for now. I can download only .mp4, .mkv, .webm, .ts, .mov, .hevc, .png, .jpg, .jpeg files."
         )
-    if int(data["sizebytes"]) > 524288000 and m.sender_id not in [6791744215]:
+    if int(data["sizebytes"]) > 524288000 and m.sender_id not in [5738579437]:
         return await hm.edit(
             f"Sorry! File is too big. I can download only 500MB and this file is of {data['size']} ."
         )
@@ -415,7 +419,7 @@ async def handle_message(m: Message):
 File Name: `{data['file_name']}`
 Size: **{data["size"]}**
 
-@rishucoder
+@Ur_Rishu_143
 """,
             supports_streaming=True,
             spoiler=True,
@@ -438,7 +442,7 @@ Size: **{data["size"]}**
 File Name: `{data['file_name']}`
 Size: **{data["size"]}**
 
-@rishucoder
+@Ur_Rishu_143
 """,
             progress_callback=progress_bar,
             thumb=thumbnail if thumbnail else None,
