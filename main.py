@@ -139,7 +139,7 @@ async def stats_command(m: UpdateNewMessage):
 
 ** Total Messages: {message_count}**
 ** New Users Today: {new_users_today}**
-** Top Active Users: {format_top_users(top_users)}**
+** Top Active Users:\n {format_top_users(top_users)}**
 ** File Types: {format_file_stats(file_stats)}**
 
 ** Uptime: {uptime}**
@@ -174,7 +174,7 @@ async def start(m: UpdateNewMessage):
 » ✦ ησ ʟᴧɢ, ғᴧsᴛ ᴧηᴅ sєᴄυꝛє 
 » ✦ ᴘꝛєϻɪυϻ ғєᴧᴛυꝛєs
 •──────────────────────•
-❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ  »»  ˹ʀɪsʜυ ʙσᴛ˼  
+❖ 𝐏ᴏᴡᴇʀᴇᴅ ʙʏ  »»  [˹ʀɪsʜυ ʙσᴛ˼ ](t.me/ur_rishu_143) 
 •──────────────────────•**
 """
     if not db.sismember("users", str(m.sender_id)):
@@ -249,7 +249,7 @@ async def help_command(m: UpdateNewMessage):
     check_if = await is_user_on_chat(bot, f"@rishu_mood", m.peer_id)
     if not check_if:
         return await m.reply(f"Please join @rishu_mood then send me the link again.")
-    help_text = """**     ⍟───[ ϻʏ ᴅᴇᴛᴀɪʟꜱ ]───⍟
+    help_text = """**     ⍟─── ϻʏ ᴅᴇᴛᴀɪʟꜱ ───⍟
     
 ───────────────────────
 ❖ ɪ ᴧϻ ϻσsᴛ ᴘσᴡєʀғυʟʟ ᴛєꝛᴧʙσx ʙσᴛ   
