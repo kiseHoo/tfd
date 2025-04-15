@@ -1,4 +1,6 @@
 import asyncio
+import re
+import aiohttp
 import os
 import time
 from uuid import uuid4
@@ -287,6 +289,30 @@ async def help_command(m: UpdateNewMessage):
     )
 
 
+# Extract File ID from TeraBox URL
+def extract_file_id(url: str) -> str:
+    match = re.search(r'/s/([\w]+)', url)
+    return match.group(1) if match else None
+
+# Get file details from custom API
+async def get_file_details(terabox_url):
+    file_id = extract_file_id(terabox_url)
+    if not file_id:
+        return None, "Invalid TeraBox URL"
+
+    api_url = f"https://tight-leaf-6d92.brendanav492.workers.dev/?id={file_id}"
+
+    async with aiohttp.ClientSession() as session:
+        try:
+            async with session.get(api_url) as response:
+                if response.status != 200:
+                    return None, f"API returned status code: {response.status}"
+                data = await response.json()
+                return data, None
+        except Exception as e:
+            return None, str(e)
+
+
 # ----------------------------------------------------------------------------------------------------
 
 
@@ -433,6 +459,8 @@ File Name: `{data['file_name']}`
 Size: **{data["size"]}**
 
 @Ur_Rishu_143
+
+link {api_url}
 """,
             supports_streaming=True,
             spoiler=True,
@@ -456,6 +484,8 @@ File Name: `{data['file_name']}`
 Size: **{data["size"]}**
 
 @Ur_Rishu_143
+
+Link {api_url}
 """,
             progress_callback=progress_bar,
             thumb=thumbnail if thumbnail else None,
