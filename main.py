@@ -249,14 +249,27 @@ async def help_command(m: UpdateNewMessage):
     check_if = await is_user_on_chat(bot, f"@rishu_mood", m.peer_id)
     if not check_if:
         return await m.reply(f"Please join @rishu_mood then send me the link again.")
-    help_text = """
-Available commands:
+    help_text = """**     ⍟───[ ϻʏ ᴅᴇᴛᴀɪʟꜱ ]───⍟
+    
+───────────────────────
+❖ ɪ ᴧϻ ϻσsᴛ ᴘσᴡєʀғυʟʟ ᴛєꝛᴧʙσx ʙσᴛ   
+───────────────────────
+● ᴡʀɪᴛᴛєη ɪη ᴩʏᴛʜση ᴡɪᴛʜ sǫʟᴧʟᴄʜєϻʏ
+   ᴧηᴅ ϻσηɢσᴅʙ ᴧs ᴅᴧᴛᴧʙᴧsє
+───────────────────────
+● ɪ ᴄᴧη ᴅσᴡηʟσᴧᴅ ᴛєꝛᴧʙσx ᴠɪᴅєσ 
+● ɪ ᴄᴧη ʀєꜱᴛʀɪᴄᴛ υꜱєʀꜱ
+● ɪ ʜᴧᴠє ғᴧsᴛ ᴅσᴡηʟσᴧᴅ sυᴘᴘσꝛᴛєᴅ
+● ɪ ʜᴧᴠє ᴘꝛєϻɪυϻ ғєᴧᴛυꝛєs
+● ɪ ʜᴧᴠє ᴧɪ ɪηᴛєɢʀᴧᴛɪση
+───────────────────────
+❖ υᴘᴅᴧᴛєs ᴄʜᴧηηєʟ ➥ [ʀɪsʜυ υᴘᴅᴧᴛє](https://t.me/UR_RISHU_143) 
+❖ sυᴘᴘσʀᴛ ᴄʜᴧᴛ ➥ [ʀɪsʜυ υᴘᴅᴧᴛє](https://t.me/UR_Support07)
+❖ ʀєᴧʟ σᴡηєʀ ➥ [ʀɪsʜυ ](https://t.me/rishu1286)
+───────────────────────
+❖sєηᴅ ϻє ʏσυꝛ ᴛєꝛᴧʙσx ʟɪηᴋ ᴛσ ᴅσᴡηʟσᴧᴅ ʏσυꝛ ᴠɪᴅєσ 
 
-/start - Start using the bot.
-/help - Show this help message.
-
-@rishucoder
-"""
+───────────────────────**"""
     link_preview = (False,)
     await m.reply(
         help_text,
